@@ -1,0 +1,7 @@
+function App() {
+  const name = "Meenakshi";
+
+  return <h2>Welcome {name}</h2>;
+}
+
+export default App;
