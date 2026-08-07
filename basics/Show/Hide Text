@@ -1,0 +1,22 @@
+import {useState} from "react";
+
+function App(){
+
+ const [show,setShow]=useState(true);
+
+ return(
+  <div>
+
+   {
+    show && <h1>Hello React</h1>
+   }
+
+   <button onClick={()=>setShow(!show)}>
+    Show/Hide
+   </button>
+
+  </div>
+ )
+}
+
+export default App;
