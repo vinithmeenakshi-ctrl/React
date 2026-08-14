@@ -1,0 +1,29 @@
+import { useState } from "react";
+
+function App() {
+  const [user, setUser] = useState("");
+  const [message, setMessage] = useState("");
+
+  function checkUser() {
+    if (user === "admin") {
+      setMessage("Valid User");
+    } else {
+      setMessage("Invalid User");
+    }
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        onChange={(e) => setUser(e.target.value)}
+      />
+
+      <button onClick={checkUser}>Check</button>
+
+      <h3>{message}</h3>
+    </div>
+  );
+}
+
+export default App;
