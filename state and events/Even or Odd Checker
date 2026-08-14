@@ -1,0 +1,21 @@
+import { useState } from "react";
+
+function App() {
+  const [num, setNum] = useState("");
+
+  return (
+    <div>
+      <input
+        type="number"
+        onChange={(e) => setNum(e.target.value)}
+      />
+
+      <h3>
+        {num !== "" &&
+          (num % 2 === 0 ? "Even Number" : "Odd Number")}
+      </h3>
+    </div>
+  );
+}
+
+export default App;
