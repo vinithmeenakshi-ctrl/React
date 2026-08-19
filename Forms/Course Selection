@@ -1,0 +1,28 @@
+import { useState } from "react";
+
+function App() {
+  const [course, setCourse] = useState("");
+
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Selected Course: " + course);
+  }
+
+  return (
+    <form onSubmit={submitForm}>
+      <select onChange={(e) => setCourse(e.target.value)}>
+        <option value="">Select Course</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="React">React</option>
+        <option value="C++">C++</option>
+      </select>
+
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default App;
