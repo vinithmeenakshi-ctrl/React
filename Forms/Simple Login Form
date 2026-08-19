@@ -1,0 +1,35 @@
+import { useState } from "react";
+
+function App() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Username: " + username + "\nPassword: " + password);
+  }
+
+  return (
+    <form onSubmit={submitForm}>
+      <input
+        type="text"
+        placeholder="Username"
+        onChange={(e) => setUsername(e.target.value)}
+      />
+
+      <br /><br />
+
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <br /><br />
+
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
+export default App;
