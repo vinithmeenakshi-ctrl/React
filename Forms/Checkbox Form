@@ -1,0 +1,62 @@
+import { useState } from "react";
+
+function App() {
+  const [skills, setSkills] = useState([]);
+
+  function changeSkill(e) {
+    if (e.target.checked) {
+      setSkills([...skills, e.target.value]);
+    } else {
+      setSkills(skills.filter((skill) => skill !== e.target.value));
+    }
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Skills: " + skills.join(", "));
+  }
+
+  return (
+    <form onSubmit={submitForm}>
+      <input
+        type="checkbox"
+        value="Java"
+        onChange={changeSkill}
+      />
+      Java
+
+      <br />
+
+      <input
+        type="checkbox"
+        value="Python"
+        onChange={changeSkill}
+      />
+      Python
+
+      <br />
+
+      <input
+        type="checkbox"
+        value="React"
+        onChange={changeSkill}
+      />
+      React
+
+      <br />
+
+      <input
+        type="checkbox"
+        value="SQL"
+        onChange={changeSkill}
+      />
+      SQL
+
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default App;
