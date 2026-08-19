@@ -1,0 +1,45 @@
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Name: " + name + "\nGender: " + gender);
+  }
+
+  return (
+    <form onSubmit={submitForm}>
+      <input
+        type="text"
+        placeholder="Name"
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <br /><br />
+
+      <input
+        type="radio"
+        name="gender"
+        value="Male"
+        onChange={(e) => setGender(e.target.value)}
+      />
+      Male
+
+      <input
+        type="radio"
+        name="gender"
+        value="Female"
+        onChange={(e) => setGender(e.target.value)}
+      />
+      Female
+
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default App;
